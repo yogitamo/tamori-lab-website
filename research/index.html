@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Research in the Tamori Lab explores cellular heterogeneity, amplified genome management, tumor invasion, and tissue repair.">
+  <title>Research | Tamori Lab</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23090b14'/%3E%3Ccircle cx='24' cy='31' r='13' fill='none' stroke='%2352d6c9' stroke-width='5'/%3E%3Ccircle cx='40' cy='31' r='13' fill='none' stroke='%23e984c8' stroke-width='5'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --ink: #17192a;
+      --muted: #5e6274;
+      --paper: #f3f4f8;
+      --white: #fff;
+      --line: #dfe1e9;
+      --night: #090b14;
+      --cyan: #52d6c9;
+      --violet: #8a7cf6;
+      --pink: #e984c8;
+      --orange: #ef9c54;
+      --max: 1180px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .shell { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
+
+    .site-header { color: white; background: var(--night); border-bottom: 1px solid rgb(255 255 255 / 14%); }
+    .nav { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: .02em; font-size: 1.1rem; }
+    .brand-mark { width: 28px; height: 28px; position: relative; }
+    .brand-mark::before, .brand-mark::after {
+      content: ""; position: absolute; top: 5px; width: 17px; height: 17px; border: 2px solid; border-radius: 50%;
+    }
+    .brand-mark::before { left: 0; border-color: var(--cyan); }
+    .brand-mark::after { right: 0; border-color: var(--pink); }
+    .nav-links { display: flex; align-items: center; gap: 30px; list-style: none; margin: 0; padding: 0; }
+    .nav-links a { font-size: .9rem; font-weight: 600; color: rgb(255 255 255 / 72%); }
+    .nav-links a:hover, .nav-links a:focus-visible, .nav-links .active { color: white; }
+    .nav-toggle { display: none; background: transparent; border: 0; color: white; font: inherit; padding: 8px; }
+
+    .research-hero {
+      position: relative;
+      min-height: 710px;
+      color: white;
+      background: var(--night);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+    .research-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgb(9 11 20 / 98%) 0%, rgb(9 11 20 / 89%) 49%, rgb(9 11 20 / 14%) 82%),
+        linear-gradient(0deg, rgb(9 11 20 / 62%), transparent 45%);
+      z-index: 1;
+    }
+    .hero-image { position: absolute; inset: 0 0 0 41%; width: 59%; height: 100%; object-fit: cover; object-position: center; opacity: 1; filter: brightness(1.22) saturate(1.08); }
+    .hero-inner { position: relative; z-index: 2; padding: 106px 0 96px; }
+    .hero-copy { max-width: 810px; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 10px; margin: 0 0 24px; color: var(--cyan);
+      text-transform: uppercase; letter-spacing: .16em; font-size: .76rem; font-weight: 750;
+    }
+    .eyebrow::before { content: ""; width: 38px; height: 1px; background: currentColor; }
+    h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
+    h1 { margin: 0; max-width: 790px; font-size: clamp(3.1rem, 5.6vw, 5.45rem); line-height: 1.02; letter-spacing: -.048em; text-wrap: balance; }
+    .hero-intro { max-width: 760px; margin-top: 38px; color: rgb(255 255 255 / 77%); font-size: clamp(1rem, 1.6vw, 1.18rem); }
+    .hero-intro p { margin: 0 0 1em; }
+
+    .research-nav { background: white; border-bottom: 1px solid var(--line); }
+    .research-nav-inner { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .research-nav a { padding: 25px 26px 24px; border-right: 1px solid var(--line); transition: background .2s ease; }
+    .research-nav a:first-child { border-left: 1px solid var(--line); }
+    .research-nav a:hover { background: #f7f8fb; }
+    .nav-number { display: block; color: var(--accent); font-size: .71rem; font-weight: 800; letter-spacing: .12em; margin-bottom: 5px; }
+    .research-nav strong { font-family: Georgia, "Times New Roman", serif; font-size: 1.05rem; font-weight: 400; }
+    .research-nav a:nth-child(1) { --accent: var(--cyan); }
+    .research-nav a:nth-child(2) { --accent: var(--pink); }
+    .research-nav a:nth-child(3) { --accent: var(--orange); }
+
+    .research-section { padding: 126px 0; scroll-margin-top: 20px; }
+    .section-grid { display: grid; grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); gap: 90px; align-items: start; }
+    .section-grid.reverse { grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); }
+    .section-grid.reverse .visual { order: 2; }
+    .section-label { margin: 0 0 20px; color: var(--accent); text-transform: uppercase; letter-spacing: .14em; font-size: .74rem; font-weight: 800; }
+    h2 { margin: 0 0 28px; font-size: clamp(2.7rem, 5vw, 4.9rem); line-height: 1.02; letter-spacing: -.045em; text-wrap: balance; }
+    .section-lede { margin: 0 0 26px; color: var(--ink); font-size: 1.25rem; line-height: 1.6; }
+    .section-copy { color: var(--muted); font-size: 1.04rem; }
+    .section-copy p { margin: 0 0 1.1em; }
+    .visual { position: sticky; top: 30px; }
+    .image-frame { position: relative; overflow: hidden; background: #171927; aspect-ratio: 4 / 4.8; }
+    .image-frame img { width: 100%; height: 100%; object-fit: cover; }
+    .image-frame.contain img { object-fit: contain; }
+    .image-frame::after { content: ""; position: absolute; inset: 0; box-shadow: inset 0 0 0 1px rgb(255 255 255 / 10%); pointer-events: none; }
+    .figure-caption { margin: 13px 0 0; color: #777b8b; font-size: .78rem; line-height: 1.45; }
+    .section-01 { --accent: var(--cyan); background: #f8f8fa; }
+    .section-02 { --accent: var(--pink); background: white; }
+    .section-03 { --accent: var(--orange); background: #eff0f4; }
+
+    .concept-box {
+      margin: 36px 0 0; padding: 27px 28px; background: var(--night); color: white; border-left: 4px solid var(--accent);
+    }
+    .concept-title { margin: 0 0 10px; font-size: .76rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; color: var(--accent); }
+    .concept-box p { margin: 0; color: rgb(255 255 255 / 72%); }
+    .state-list { margin: 30px 0 0; display: flex; flex-wrap: wrap; gap: 9px; }
+    .state-list span { padding: 7px 11px; border: 1px solid var(--line); background: rgb(255 255 255 / 55%); color: #55596b; font-size: .77rem; font-weight: 650; }
+
+    .question {
+      margin: 34px 0; padding: 26px 0 26px 27px; border-left: 2px solid var(--accent);
+      font-family: Georgia, "Times New Roman", serif; font-size: 1.45rem; line-height: 1.45; color: var(--ink);
+    }
+    .section-links { margin-top: 37px; padding-top: 24px; border-top: 1px solid var(--line); }
+    .section-links-title { margin: 0 0 12px; color: #777b8b; font-size: .73rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .section-links a { display: inline-flex; align-items: center; gap: 9px; font-weight: 750; }
+    .section-links a::after { content: "→"; color: var(--accent); }
+
+    .closing { padding: 96px 0; background: var(--night); color: white; }
+    .closing-grid { display: grid; grid-template-columns: 1.15fr .75fr; align-items: center; gap: 70px; }
+    .closing-art { width: min(100%, 580px); margin: 0; padding: 9px; border: 1px solid rgb(255 255 255 / 16%); background: rgb(255 255 255 / 5%); box-shadow: 0 28px 70px rgb(0 0 0 / 35%); }
+    .closing-art img { width: 100%; aspect-ratio: 1.3; object-fit: cover; }
+    .closing p { margin: 0 0 20px; color: rgb(255 255 255 / 67%); }
+    .closing a { display: inline-flex; padding: 13px 19px; border: 1px solid rgb(255 255 255 / 38%); font-weight: 700; }
+    .closing a:hover { background: white; color: var(--night); }
+    footer { padding: 48px 0; background: #05060c; color: rgb(255 255 255 / 62%); }
+    .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+    .footer-title { color: white; font-weight: 750; margin-bottom: 8px; }
+    .footer-contact { text-align: right; }
+    .social-links { display: flex; justify-content: flex-end; gap: 18px; margin-top: 14px; }
+    .social-links a { color: white; font-size: .82rem; font-weight: 700; letter-spacing: .04em; }
+    .social-links a:hover, .social-links a:focus-visible { color: var(--cyan); }
+
+    @media (max-width: 860px) {
+      .nav { min-height: 72px; }
+      .nav-toggle { display: block; }
+      .nav-links { display: none; position: absolute; z-index: 20; top: 72px; left: 20px; right: 20px; padding: 24px; background: rgb(9 11 20 / 98%); border: 1px solid rgb(255 255 255 / 15%); flex-direction: column; align-items: flex-start; gap: 18px; }
+      .nav-links.open { display: flex; }
+      .research-hero { min-height: 690px; }
+      .hero-image { inset: 0; width: 100%; opacity: .72; }
+      .research-hero::before { background: linear-gradient(90deg, rgb(9 11 20 / 97%), rgb(9 11 20 / 60%)); }
+      .research-nav-inner { grid-template-columns: 1fr; }
+      .research-nav a, .research-nav a:first-child { border-left: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+      .section-grid, .section-grid.reverse { grid-template-columns: 1fr; gap: 52px; }
+      .section-grid.reverse .visual { order: 0; }
+      .visual { position: static; max-width: 620px; }
+      .image-frame { aspect-ratio: 4 / 3.2; }
+      .closing-grid { grid-template-columns: 1fr; gap: 38px; align-items: start; }
+    }
+    @media (max-width: 560px) {
+      .shell { width: min(calc(100% - 28px), var(--max)); }
+      .research-hero { min-height: 660px; }
+      .hero-inner { padding: 78px 0; }
+      h1 { font-size: clamp(2.85rem, 13vw, 3.85rem); }
+      .research-section { padding: 80px 0; }
+      .section-grid { gap: 38px; }
+      .image-frame { aspect-ratio: 1 / 1; }
+      .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+      .footer-contact { text-align: left; }
+      .social-links { justify-content: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Primary navigation">
+      <a class="brand" href="../" aria-label="Tamori Lab home"><span class="brand-mark" aria-hidden="true"></span><span>Tamori Lab</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a class="active" href="../research/">Research</a></li>
+        <li><a href="../people/">People</a></li>
+        <li><a href="../publications/">Publications</a></li>
+        <li><a href="../news/">News</a></li>
+        <li><a href="../contact/">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="research-hero">
+      <img class="hero-image" src="https://images.squarespace-cdn.com/content/v1/55dd6e1de4b0f656b821f574/1659085755658-0DE2J7BB85MMM49U83CR/MosaicFECsChR2.crop.jpg" alt="Fluorescence microscopy image of genetically mosaic Drosophila tissue">
+      <div class="shell hero-inner">
+        <div class="hero-copy">
+          <h1>Cellular heterogeneity shapes how tissues adapt and evolve.</h1>
+          <div class="hero-intro">
+            <p>Even cells that share the same genetic background can differ in ploidy, chromosome organization, transcriptional activity, morphology, and behavior. This diversity allows tissues to respond to developmental demands, environmental stress, and cellular damage, while also creating opportunities for pathological change and cellular evolution.</p>
+            <p>Rather than treating heterogeneity simply as biological noise, we study it as an organized and dynamic landscape of cellular states.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="research-nav" aria-label="Research themes">
+      <div class="shell research-nav-inner">
+        <a href="#amplified-genomes"><span class="nav-number">01 / AGM</span><strong>Managing Amplified Genomes</strong></a>
+        <a href="#tumor-invasion"><span class="nav-number">02 / INVASION</span><strong>Tumor Invasion &amp; Heterogeneity</strong></a>
+        <a href="#tissue-repair"><span class="nav-number">03 / REPAIR</span><strong>Homeostasis &amp; Tissue Repair</strong></a>
+      </div>
+    </nav>
+
+    <section class="research-section section-01" id="amplified-genomes">
+      <div class="shell section-grid">
+        <div class="visual">
+          <div class="image-frame contain"><img src="../assets/en-fzr-wing-disc-dapi.webp" alt="DAPI-stained Drosophila wing disc containing induced polyploid cells"></div>
+          <p class="figure-caption">Polyploid cells provide a powerful system for studying the organization and behavior of amplified genomes.</p>
+        </div>
+        <div>
+          <p class="section-label">01 / Central theme</p>
+          <h2>Managing Amplified Genomes</h2>
+          <p class="section-lede">Polyploidy expands the range of chromosome configurations, transcriptional programs, cellular morphologies, and behaviors available to a cell.</p>
+          <div class="section-copy">
+            <p>Polyploid cells contain multiple copies of their genome and are found throughout animal development, tissue regeneration, aging, and cancer. Although polyploidy is often treated as a single cellular condition, polyploid cells can adopt remarkably different forms, functions, and capacities for division.</p>
+            <p>We are developing the concept of <strong>Amplified Genome Management</strong> to describe the strategies polyploid cells use to organize their chromosomes, regulate genome activity, maintain cellular function, and survive physiological stress.</p>
+            <p>Using inducible Drosophila models across multiple tissues and cell lineages, we investigate how chromosome organization relates to genome utilization, stress resilience, and mitotic competence.</p>
+          </div>
+          <div class="concept-box">
+            <p class="concept-title">Polyploid State Space</p>
+            <p>A framework for mapping the diverse states available to polyploid cells—and for asking whether transitions among those states can be predicted and redirected.</p>
+          </div>
+          <div class="state-list" aria-label="Research dimensions"><span>Ploidy</span><span>Chromosome architecture</span><span>Genome utilization</span><span>Stress resilience</span><span>Mitotic competence</span></div>
+          <div class="section-links"><p class="section-links-title">Research connection</p><a href="#tumor-invasion">Polyploidy in cancer</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="research-section section-02" id="tumor-invasion">
+      <div class="shell section-grid reverse">
+        <div class="visual">
+          <div class="image-frame"><img src="https://images.squarespace-cdn.com/content/v1/55dd6e1de4b0f656b821f574/d28c927f-67e7-4cf0-856b-f03de998fdc5/lgl_Ras3d.Lamin.Lamgamma5x60Z.jpeg" alt="Drosophila epithelial tumor invading through the basement membrane"></div>
+          <p class="figure-caption">Genetically mosaic Drosophila tissues reveal how local tissue environments shape tumor invasion.</p>
+        </div>
+        <div>
+          <p class="section-label">02 / Disease context</p>
+          <h2>Tumor Invasion &amp; Cellular Heterogeneity</h2>
+          <p class="section-lede">Cells carrying the same oncogenic mutations can behave very differently depending on where they arise and the cellular states they adopt.</p>
+          <div class="question">Are there reproducible, non-random conditions—“inevitabilities”—that guide cancer development?</div>
+          <div class="section-copy">
+            <p>Using genetically mosaic Drosophila tumor models, we discovered that epithelial tumors preferentially initiate invasion from specific tissue-intrinsic regions that we termed <strong>invasion hotspots</strong>. These regions possess distinctive structural and signaling properties that make the local epithelium particularly vulnerable to oncogenic transformation and basement-membrane disruption.</p>
+            <p>We are now investigating how invasive tumors diversify into distinct cellular states and how these heterogeneous populations cooperate during collective invasion. Rather than viewing a tumor as a uniform population, we ask how transient and specialized states divide the work required for growth, tissue remodeling, stress adaptation, and invasion.</p>
+            <p>Polyploid cancer cells represent one component of this heterogeneous system, connecting tumor progression with our studies of amplified genome management.</p>
+          </div>
+          <div class="state-list" aria-label="Research topics"><span>Invasion hotspots</span><span>Collective invasion</span><span>Chromatin states</span><span>Division of labor</span><span>Polyploid cancer cells</span></div>
+          <div class="section-links"><p class="section-links-title">Selected work</p><a href="#">Publications on tumor invasion</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="research-section section-03" id="tissue-repair">
+      <div class="shell section-grid">
+        <div class="visual">
+          <div class="image-frame"><img src="https://images.squarespace-cdn.com/content/v1/55dd6e1de4b0f656b821f574/7687d5a6-dfaf-4e7d-bbe5-64e9498cbd2a/St10eggchamber.jpg" alt="Drosophila follicular epithelium used to study tissue repair"></div>
+          <p class="figure-caption">Drosophila epithelia reveal how surviving cells compensate for local cell loss.</p>
+        </div>
+        <div>
+          <p class="section-label">03 / Tissue function</p>
+          <h2>Homeostasis &amp; Tissue Repair</h2>
+          <p class="section-lede">When cell proliferation is limited, tissues require alternative strategies to replace lost cellular capacity.</p>
+          <div class="section-copy">
+            <p>Our previous work identified <strong>compensatory cellular hypertrophy</strong>, a tissue-repair mechanism in which surviving cells undergo polyploidization and increase their size to compensate for neighboring cell loss. In Drosophila epithelia, local tissue stretching acts as a mechanical signal that triggers this transition, allowing the tissue to restore its coverage without cell division.</p>
+            <p>Similar polyploid responses occur in many regenerative and postmitotic tissues across animal species. We are now revisiting tissue repair through the framework of amplified genome management.</p>
+            <p>We ask how genome amplification supports the increased functional demands placed on surviving cells, how polyploid cells maintain their enlarged genomes, and whether the same genome-management strategies also enhance resistance to cellular stress.</p>
+          </div>
+          <div class="concept-box">
+            <p class="concept-title">A connected response</p>
+            <p>Cell loss → mechanical challenge → polyploidization → amplified genome management → functional compensation and survival.</p>
+          </div>
+          <div class="state-list" aria-label="Research topics"><span>Cell competition</span><span>Compensatory cellular hypertrophy</span><span>Endoreplication</span><span>Apoptosis</span></div>
+          <div class="section-links"><p class="section-links-title">Selected work</p><a href="#">Publications on tissue homeostasis</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="shell closing-grid">
+        <figure class="closing-art"><img src="../assets/statgfp-tubcad1-basal.webp" alt="Monochrome fluorescence image of epithelial tissue architecture"></figure>
+        <div><p>Across these systems, we seek principles that explain how heterogeneous cellular states emerge, interact, and evolve.</p><a href="../contact/">Interested in our research?&nbsp; →</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-grid">
+      <div><div class="footer-title">Tamori Lab</div><div>School of Biological Sciences<br>University of Louisiana at Lafayette</div></div>
+      <div class="footer-contact"><div>411 E. St. Mary Blvd · Wharton Hall, VLW 528</div><a href="mailto:yoichiro.tamori@louisiana.edu">yoichiro.tamori@louisiana.edu</a><div class="social-links"><a href="https://www.instagram.com/tamoflylab/" target="_blank" rel="noreferrer">Instagram ↗</a><a href="https://x.com/YoichiroTamori" target="_blank" rel="noreferrer">X ↗</a></div></div>
+    </div>
+  </footer>
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+  </script>
+</body>
+</html>

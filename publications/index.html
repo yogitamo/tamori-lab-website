@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Publications from the Tamori Lab at the University of Louisiana at Lafayette.">
+  <title>Publications | Tamori Lab</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23090b14'/%3E%3Ccircle cx='24' cy='31' r='13' fill='none' stroke='%2352d6c9' stroke-width='5'/%3E%3Ccircle cx='40' cy='31' r='13' fill='none' stroke='%23e984c8' stroke-width='5'/%3E%3C/svg%3E">
+  <style>
+    :root { --ink:#17192a; --muted:#606476; --paper:#f3f4f8; --white:#fff; --line:#dfe1e9; --night:#090b14; --cyan:#52d6c9; --violet:#8a7cf6; --pink:#e984c8; --orange:#ef9c54; --max:1180px; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin:0; color:var(--ink); background:var(--paper); font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:16px; line-height:1.6; }
+    a { color:inherit; text-decoration:none; }
+    img { display:block; max-width:100%; }
+    .shell { width:min(calc(100% - 40px),var(--max)); margin-inline:auto; }
+    .site-header { color:white; background:var(--night); border-bottom:1px solid rgb(255 255 255 / 14%); }
+    .nav { min-height:82px; display:flex; align-items:center; justify-content:space-between; gap:28px; }
+    .brand { display:inline-flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.02em; font-size:1.1rem; }
+    .brand-mark { width:28px; height:28px; position:relative; }
+    .brand-mark::before,.brand-mark::after { content:""; position:absolute; top:5px; width:17px; height:17px; border:2px solid; border-radius:50%; }
+    .brand-mark::before { left:0; border-color:var(--cyan); }
+    .brand-mark::after { right:0; border-color:var(--pink); }
+    .nav-links { display:flex; align-items:center; gap:30px; list-style:none; margin:0; padding:0; }
+    .nav-links a { font-size:.9rem; font-weight:600; color:rgb(255 255 255 / 72%); }
+    .nav-links a:hover,.nav-links a:focus-visible,.nav-links .active { color:white; }
+    .nav-toggle { display:none; background:transparent; border:0; color:white; font:inherit; padding:8px; }
+
+    .page-hero { position:relative; min-height:390px; display:flex; align-items:center; color:white; background:var(--night); overflow:hidden; }
+    .hero-image { position:absolute; inset:0 0 0 52%; width:48%; height:100%; object-fit:contain; object-position:right center; opacity:.82; filter:brightness(1.22) contrast(1.02) saturate(.84); }
+    .page-hero::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,var(--night) 0%,rgb(9 11 20 / 96%) 49%,rgb(9 11 20 / 34%) 100%); }
+    .hero-inner { position:relative; z-index:1; padding:70px 0; }
+    .eyebrow { display:inline-flex; align-items:center; gap:10px; margin:0 0 18px; color:var(--cyan); text-transform:uppercase; letter-spacing:.16em; font-size:.76rem; font-weight:750; }
+    .eyebrow::before { content:""; width:38px; height:1px; background:currentColor; }
+    h1,h2 { font-family:Georgia,"Times New Roman",serif; font-weight:400; }
+    h1 { margin:0; font-size:clamp(3.7rem,7vw,6.7rem); line-height:.95; letter-spacing:-.052em; }
+
+    .year-nav { position:sticky; top:0; z-index:8; background:rgb(255 255 255 / 94%); border-bottom:1px solid var(--line); backdrop-filter:blur(12px); }
+    .year-nav-inner { display:flex; gap:24px; align-items:center; min-height:58px; overflow-x:auto; scrollbar-width:none; }
+    .year-nav-inner::-webkit-scrollbar { display:none; }
+    .year-nav a { flex:0 0 auto; color:#737788; font-size:.78rem; font-weight:750; }
+    .year-nav a:hover { color:var(--ink); }
+
+    .publication-list { padding:86px 0 120px; background:white; }
+    .year-group { display:grid; grid-template-columns:170px 1fr; gap:42px; padding:54px 0; border-top:1px solid var(--line); scroll-margin-top:58px; }
+    .year-group:first-child { border-top:0; padding-top:0; }
+    .year { position:sticky; top:92px; align-self:start; margin:0; font-family:Georgia,"Times New Roman",serif; font-size:clamp(2.7rem,5vw,4.5rem); line-height:1; font-weight:400; letter-spacing:-.045em; color:var(--year-color,var(--ink)); }
+    .citations { display:grid; gap:0; }
+    .citation { padding:0 0 30px; margin:0 0 30px; border-bottom:1px solid #ececf1; }
+    .citation:last-child { border-bottom:0; margin-bottom:0; padding-bottom:0; }
+    .title { margin:0 0 8px; font-family:Georgia,"Times New Roman",serif; font-size:clamp(1.25rem,2vw,1.55rem); line-height:1.35; letter-spacing:-.012em; }
+    .title a { border-bottom:1px solid transparent; }
+    .title a:hover { border-bottom-color:var(--ink); }
+    .authors { margin:0 0 5px; color:var(--muted); font-size:.9rem; }
+    .source { margin:0; color:#777b8b; font-size:.86rem; }
+    .source em { color:var(--ink); font-style:normal; font-weight:700; }
+    .language { display:inline-flex; margin-left:8px; padding:2px 7px; background:#eff0f5; color:#6e7282; font-size:.67rem; font-weight:750; letter-spacing:.07em; text-transform:uppercase; vertical-align:2px; }
+    .external::after { content:" ↗"; color:var(--violet); font-family:inherit; font-size:.75em; }
+    #y2025 { --year-color:var(--cyan); }
+    #y2026 { --year-color:var(--orange); }
+    #y2024 { --year-color:var(--violet); }
+    #y2021 { --year-color:var(--pink); }
+    #y2013 { --year-color:var(--orange); }
+
+    footer { padding:48px 0; background:#05060c; color:rgb(255 255 255 / 62%); }
+    .footer-grid { display:grid; grid-template-columns:1fr 1fr; gap:48px; }
+    .footer-title { color:white; font-weight:750; margin-bottom:8px; }
+    .footer-contact { text-align:right; }
+    .social-links { display:flex; justify-content:flex-end; gap:18px; margin-top:14px; }
+    .social-links a { color:white; font-size:.82rem; font-weight:700; letter-spacing:.04em; }
+    .social-links a:hover,.social-links a:focus-visible { color:var(--cyan); }
+
+    @media (max-width:760px) {
+      .nav { min-height:72px; }
+      .nav-toggle { display:block; }
+      .nav-links { display:none; position:absolute; z-index:20; top:72px; left:20px; right:20px; padding:24px; background:rgb(9 11 20 / 98%); border:1px solid rgb(255 255 255 / 15%); flex-direction:column; align-items:flex-start; gap:18px; }
+      .nav-links.open { display:flex; }
+      .hero-image { inset:0; width:100%; object-position:right center; opacity:.48; }
+      .page-hero::after { background:linear-gradient(90deg,rgb(9 11 20 / 98%),rgb(9 11 20 / 66%)); }
+      .year-group { grid-template-columns:1fr; gap:28px; padding:46px 0; }
+      .year { position:static; font-size:3.3rem; }
+    }
+    @media (max-width:520px) {
+      .shell { width:min(calc(100% - 28px),var(--max)); }
+      .page-hero { min-height:320px; }
+      .publication-list { padding:60px 0 90px; }
+      .year-nav-inner { gap:18px; }
+      .footer-grid { grid-template-columns:1fr; gap:24px; }
+      .footer-contact { text-align:left; }
+      .social-links { justify-content:flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Primary navigation">
+      <a class="brand" href="../" aria-label="Tamori Lab home"><span class="brand-mark" aria-hidden="true"></span><span>Tamori Lab</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <ul class="nav-links" id="nav-links"><li><a href="../research/">Research</a></li><li><a href="../people/">People</a></li><li><a class="active" href="../publications/">Publications</a></li><li><a href="../news/">News</a></li><li><a href="../contact/">Contact</a></li></ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <img class="hero-image" src="../assets/eggchambers-sketch.webp" alt="Hand-drawn sketches of Drosophila egg chambers beside a pen">
+      <div class="shell hero-inner"><h1>Publications</h1></div>
+    </section>
+
+    <nav class="year-nav" aria-label="Publication years"><div class="shell year-nav-inner"><a href="#y2026">2026</a><a href="#y2025">2025</a><a href="#y2024">2024</a><a href="#y2022">2022</a><a href="#y2021">2021</a><a href="#y2019">2019</a><a href="#y2017">2017</a><a href="#y2014">2014</a><a href="#y2013">2013</a><a href="#y2010">2010</a><a href="#y2005">2005</a><a href="#y2000">2000</a></div></nav>
+
+    <section class="publication-list">
+      <div class="shell">
+        <article class="year-group" id="y2026"><h2 class="year">2026</h2><div class="citations">
+          <div class="citation"><p class="title"><a class="external" href="https://doi.org/10.1083/jcb.202507096" target="_blank" rel="noreferrer">Polyploidy reprograms epithelial cells for motility and phagocytosis via stress signaling</a></p><p class="authors">Zhou, Y., Wang, X., Tan, X., Nara, S., Huang, Y.-C., Tamori, Y., and Deng, W.-M.</p><p class="source"><em>Journal of Cell Biology</em>, 225: e202507096.</p></div>
+        </div></article>
+
+        <article class="year-group" id="y2025"><h2 class="year">2025</h2><div class="citations">
+          <div class="citation"><p class="title"><a class="external" href="https://doi.org/10.1016/j.cois.2025.101370" target="_blank" rel="noreferrer">Development and regulation: Evo-Devo and extended perspectives</a></p><p class="authors">Koshikawa, S. and Tamori, Y.</p><p class="source"><em>Current Opinion in Insect Science</em>, 69: 101370.</p></div>
+          <div class="citation"><p class="title"><a class="external" href="https://www.yodosha.co.jp/jikkenigaku/articles/index.html?ci=614300" target="_blank" rel="noreferrer">Drosophila models to explore the relationship between polyploid cells and cancer development</a></p><p class="authors">Tamori, Y.</p><p class="source"><em>Experimental Medicine (Jikken Igaku)</em>, Vol. 43, No. 16. <span class="language">Japanese</span></p></div>
+        </div></article>
+
+        <article class="year-group" id="y2024"><h2 class="year">2024</h2><div class="citations"><div class="citation"><p class="title"><a class="external" href="https://www.mdpi.com/2073-4425/15/1/96" target="_blank" rel="noreferrer">Polyploid Cancer Cell Models in Drosophila</a></p><p class="authors">Wang, Y. and Tamori, Y.</p><p class="source"><em>Genes</em>, 15(1): 96.</p></div></div></article>
+
+        <article class="year-group" id="y2022"><h2 class="year">2022</h2><div class="citations"><div class="citation"><p class="title"><a class="external" href="https://doi.org/10.1016/j.cub.2022.11.067" target="_blank" rel="noreferrer">Attachment and detachment of cortical myosin regulates cell junction exchange during cell rearrangement in the Drosophila wing epithelium</a></p><p class="authors">Ikawa, K., Ishihara, S., Tamori, Y., and Sugimura, K.</p><p class="source"><em>Current Biology</em>.</p></div></div></article>
+
+        <article class="year-group" id="y2021"><h2 class="year">2021</h2><div class="citations">
+          <div class="citation"><p class="title"><a class="external" href="https://www.biorxiv.org/content/10.1101/2021.09.28.462102v1" target="_blank" rel="noreferrer">Tumor-cell invasion initiates at invasion hotspots, an epithelial tissue-intrinsic microenvironment</a></p><p class="authors">Kobayashi, R., Takishima, H., Deng, S., Fujita, Y., and Tamori, Y.</p><p class="source"><em>bioRxiv</em>, doi:10.1101/2021.09.28.462102.</p></div>
+          <div class="citation"><p class="title"><a class="external" href="https://doi.org/10.1016/j.cub.2021.06.064" target="_blank" rel="noreferrer">Sequential oncogenic mutations influence cell competition</a></p><p class="authors">Kohashi, K., Mori, Y., Narumi, R., Kozawa, K., Kamasaki, T., Ishikawa, S., Kajita, M., Kobayashi, R., Tamori, Y., and Fujita, Y.</p><p class="source"><em>Current Biology</em>, 31: 3984–3995.</p></div>
+          <div class="citation"><p class="title">Tumor hotspots: Tissue-intrinsic oncogenic niche</p><p class="authors">Kobayashi, R. and Tamori, Y.</p><p class="source"><em>The Cell (Saibo)</em>, “Angiogenesis and immunity in tumor development.” <span class="language">Japanese</span></p></div>
+        </div></article>
+
+        <article class="year-group" id="y2020"><h2 class="year">2020</h2><div class="citations"><div class="citation"><p class="title">Mechanotransduction-mediated epithelial tissue repair through cell competition</p><p class="authors">Nara, S. and Tamori, Y.</p><p class="source"><em>Journal of Clinical and Experimental Medicine (Igaku No Ayumi)</em>, 274: 434–441. <span class="language">Japanese</span></p></div></div></article>
+
+        <article class="year-group" id="y2019"><h2 class="year">2019</h2><div class="citations">
+          <div class="citation"><p class="title">The initial stage of tumorigenesis in Drosophila epithelial tissues</p><p class="authors">Tamori, Y.</p><p class="source"><em>Advances in Experimental Medicine and Biology</em>, 1167: 87–103.</p></div>
+          <div class="citation"><p class="title">Cell competition and tissue homeostasis through compensatory cellular growth</p><p class="authors">Tamori, Y. and Fujita, Y.</p><p class="source"><em>Journal of Japanese Biochemical Society</em>, 9: 147–158. <span class="language">Japanese</span></p></div>
+        </div></article>
+
+        <article class="year-group" id="y2018"><h2 class="year">2018</h2><div class="citations"><div class="citation"><p class="title">Tissue-intrinsic tumor hotspots</p><p class="authors">Tamori, Y.</p><p class="source"><em>The Cell (Saibo)</em>, “Tumor Microenvironment.” <span class="language">Japanese</span></p></div></div></article>
+
+        <article class="year-group" id="y2017"><h2 class="year">2017</h2><div class="citations">
+          <div class="citation"><p class="title">Induction and diagnosis of tumors in Drosophila imaginal disc epithelia</p><p class="authors">Morimoto, K. and Tamori, Y.</p><p class="source"><em>Journal of Visualized Experiments</em>, 125: e55901.</p></div>
+          <div class="citation"><p class="title">Systematic analysis of microRNAs in Drosophila epithelial tumors reveals tumor-enhancing and tumor-suppressing microRNAs</p><p class="authors">Shu, Z., Huang, Y.-C., Palmer, W., Tamori, Y., Moreno, H., Wang, H., Liu, N., and Deng, W.-M.</p><p class="source"><em>Oncotarget</em>, 8: 108825–108839.</p></div>
+          <div class="citation"><p class="title">Tissue-intrinsic tumor hotspots: terroir for tumorigenesis</p><p class="authors">Tamori, Y. and Deng, W.-M.</p><p class="source"><em>Trends in Cancer</em>, 3: 259–268.</p></div>
+        </div></article>
+
+        <article class="year-group" id="y2016"><h2 class="year">2016</h2><div class="citations">
+          <div class="citation"><p class="title">Epithelial tumors originate in tumor hotspots, a tissue-intrinsic microenvironment</p><p class="authors">Tamori, Y., Suzuki, E., and Deng, W.-M.</p><p class="source"><em>PLoS Biology</em>, 14(9): e1002537.</p></div>
+          <div class="citation"><p class="title">Growth of winner cells in cell competition—replacement and compensation</p><p class="authors">Tamori, Y.</p><p class="source"><em>Journal of Clinical and Experimental Medicine (Igaku No Ayumi)</em>, Vol. 29, No. 9. <span class="language">Japanese</span></p></div>
+          <div class="citation"><p class="title">Compensatory tissue repair in cell competition</p><p class="authors">Tamori, Y.</p><p class="source"><em>Seitai No Kagaku</em>, Vol. 67, No. 2. <span class="language">Japanese</span></p></div>
+        </div></article>
+
+        <article class="year-group" id="y2014"><h2 class="year">2014</h2><div class="citations">
+          <div class="citation"><p class="title">Compensatory cellular hypertrophy: the other strategy for tissue homeostasis</p><p class="authors">Tamori, Y. and Deng, W.-M.</p><p class="source"><em>Trends in Cell Biology</em>, 24: 230–237.</p></div>
+          <div class="citation"><p class="title">Regulation of broad by the Notch pathway affects timing of follicle cell development</p><p class="authors">Jia, D., Tamori, Y., Pyrowolakis, G., and Deng, W.-M.</p><p class="source"><em>Developmental Biology</em>, 392: 52–61.</p></div>
+        </div></article>
+
+        <article class="year-group" id="y2013"><h2 class="year">2013</h2><div class="citations">
+          <div class="citation"><p class="title">Tissue repair through cell competition and compensatory cellular hypertrophy in postmitotic epithelia</p><p class="authors">Tamori, Y. and Deng, W.-M.</p><p class="source"><em>Developmental Cell</em>, 25: 350–363.</p></div>
+          <div class="citation"><p class="title">Efficient EGFR signaling and dorsal-ventral axis patterning requires syntaxin-dependent Gurken trafficking</p><p class="authors">Tian, A.-G., Tamori, Y., Huang, Y.-C., Toledo, M. N., and Deng, W.-M.</p><p class="source"><em>Developmental Biology</em>, 373: 349–358.</p></div>
+        </div></article>
+
+        <article class="year-group" id="y2012"><h2 class="year">2012</h2><div class="citations"><div class="citation"><p class="title">Knudson Hypothesis</p><p class="authors">Tamori, Y. and Deng, W.-M.</p><p class="source"><em>Cell Press Cell Picture Show: Cancer</em>.</p></div></div></article>
+
+        <article class="year-group" id="y2011"><h2 class="year">2011</h2><div class="citations"><div class="citation"><p class="title">Cell competition and its implications for development and cancer</p><p class="authors">Tamori, Y. and Deng, W.-M.</p><p class="source"><em>Journal of Genetics and Genomics</em>, 38: 483–496.</p></div></div></article>
+
+        <article class="year-group" id="y2010"><h2 class="year">2010</h2><div class="citations">
+          <div class="citation"><p class="title">Involvement of Lgl and Mahjong/VprBP in cell competition</p><p class="authors">Tamori, Y., Bialucha, C. U., Tian, A.-G., Kajita, M., Huang, Y.-C., Norman, M., Harrison, N., Poulton, J., Ivanovitch, K., Disch, L., Liu, T., Deng, W.-M., and Fujita, Y.</p><p class="source"><em>PLoS Biology</em>, 8: e1000422.</p></div>
+          <div class="citation"><p class="title">Mahjong-mediated regulation of cell competition</p><p class="authors">Tamori, Y. and Deng, W.-M.</p><p class="source"><em>Experimental Medicine (Jikken Igaku)</em>, Vol. 29, No. 9. <span class="language">Japanese</span></p></div>
+        </div></article>
+
+        <article class="year-group" id="y2009"><h2 class="year">2009</h2><div class="citations"><div class="citation"><p class="title">Maternal effects on phenotypic plasticity in larvae of the salamander Hynobius retardatus</p><p class="authors">Michimae, H., Nishimura, K., Tamori, Y., and Wakahara, M.</p><p class="source"><em>Oecologia</em>, 160: 601–608.</p></div></div></article>
+
+        <article class="year-group" id="y2008"><h2 class="year">2008</h2><div class="citations"><div class="citation"><p class="title">Evolution acts on enhancer organization to fine-tune gradient threshold readouts</p><p class="authors">Crocker, J., Tamori, Y., and Erives, A.</p><p class="source"><em>PLoS Biology</em>, 6: e263.</p></div></div></article>
+
+        <article class="year-group" id="y2005"><h2 class="year">2005</h2><div class="citations"><div class="citation"><p class="title">P450 aromatase expression in the temperature-sensitive sexual differentiation of salamander (Hynobius retardatus) gonads</p><p class="authors">Sakata, N., Tamori, Y., and Wakahara, M.</p><p class="source"><em>International Journal of Developmental Biology</em>, 49: 417–425.</p></div></div></article>
+
+        <article class="year-group" id="y2004"><h2 class="year">2004</h2><div class="citations"><div class="citation"><p class="title">Spatio-temporal expression of a DAZ-like gene in the Japanese newt Cynops pyrrhogaster that has no germ plasm</p><p class="authors">Tamori, Y., Iwai, T., Mita, K., and Wakahara, M.</p><p class="source"><em>Development Genes and Evolution</em>, 214: 615–627.</p></div></div></article>
+
+        <article class="year-group" id="y2000"><h2 class="year">2000</h2><div class="citations">
+          <div class="citation"><p class="title">Conversion of red blood cells from the larval to the adult type during metamorphosis in Xenopus: specific removal of mature larval-type RBCs by apoptosis</p><p class="authors">Tamori, Y. and Wakahara, M.</p><p class="source"><em>International Journal of Developmental Biology</em>, 44: 373–380.</p></div>
+          <div class="citation"><p class="title">Homoiogenetic regulation through the ectoderm on localized expression of the hatching gland phenotype in the head area of Xenopus embryos</p><p class="authors">Tamori, Y., Mita, K., and Katagiri, C.</p><p class="source"><em>Development Growth and Differentiation</em>, 42: 459–467.</p></div>
+        </div></article>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="shell footer-grid"><div><div class="footer-title">Tamori Lab</div><div>School of Biological Sciences<br>University of Louisiana at Lafayette</div></div><div class="footer-contact"><div>411 E. St. Mary Blvd · Wharton Hall, VLW 528</div><a href="mailto:yoichiro.tamori@louisiana.edu">yoichiro.tamori@louisiana.edu</a><div class="social-links"><a href="https://www.instagram.com/tamoflylab/" target="_blank" rel="noreferrer">Instagram ↗</a><a href="https://x.com/YoichiroTamori" target="_blank" rel="noreferrer">X ↗</a></div></div></div></footer>
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+  </script>
+</body>
+</html>

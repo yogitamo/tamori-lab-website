@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Meet the researchers and students of the Tamori Lab at the University of Louisiana at Lafayette.">
+  <title>People | Tamori Lab</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23090b14'/%3E%3Ccircle cx='24' cy='31' r='13' fill='none' stroke='%2352d6c9' stroke-width='5'/%3E%3Ccircle cx='40' cy='31' r='13' fill='none' stroke='%23e984c8' stroke-width='5'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --ink: #17192a;
+      --muted: #606476;
+      --paper: #f3f4f8;
+      --white: #fff;
+      --line: #dfe1e9;
+      --night: #090b14;
+      --cyan: #52d6c9;
+      --violet: #8a7cf6;
+      --pink: #e984c8;
+      --orange: #ef9c54;
+      --max: 1180px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 16px; line-height: 1.65; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .shell { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
+    .site-header { color: white; background: var(--night); border-bottom: 1px solid rgb(255 255 255 / 14%); }
+    .nav { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: .02em; font-size: 1.1rem; }
+    .brand-mark { width: 28px; height: 28px; position: relative; }
+    .brand-mark::before, .brand-mark::after { content: ""; position: absolute; top: 5px; width: 17px; height: 17px; border: 2px solid; border-radius: 50%; }
+    .brand-mark::before { left: 0; border-color: var(--cyan); }
+    .brand-mark::after { right: 0; border-color: var(--pink); }
+    .nav-links { display: flex; align-items: center; gap: 30px; list-style: none; margin: 0; padding: 0; }
+    .nav-links a { font-size: .9rem; font-weight: 600; color: rgb(255 255 255 / 72%); }
+    .nav-links a:hover, .nav-links a:focus-visible, .nav-links .active { color: white; }
+    .nav-toggle { display: none; background: transparent; border: 0; color: white; font: inherit; padding: 8px; }
+
+    .people-hero { position: relative; min-height: 430px; display: flex; align-items: center; background: var(--night); color: white; overflow: hidden; }
+    .people-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--night) 0%, rgb(9 11 20 / 94%) 49%, rgb(9 11 20 / 24%) 100%); }
+    .hero-image { position: absolute; inset: 0 0 0 52%; width: 48%; height: 100%; object-fit: cover; object-position: center 52%; opacity: .9; filter: brightness(1.12) saturate(1.04); }
+    .hero-copy { position: relative; z-index: 1; padding: 72px 0; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 18px; color: var(--cyan); text-transform: uppercase; letter-spacing: .16em; font-size: .76rem; font-weight: 750; }
+    .eyebrow::before { content: ""; width: 38px; height: 1px; background: currentColor; }
+    h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
+    h1 { margin: 0; font-size: clamp(3.7rem, 7vw, 6.7rem); line-height: .95; letter-spacing: -.052em; }
+    .group-photo-section { padding: 78px 0; background: white; }
+    .group-photo { position: relative; }
+    .group-photo img { width: 100%; height: auto; }
+    .group-photo::after { content: ""; position: absolute; inset: 0; box-shadow: inset 0 0 0 1px rgb(255 255 255 / 8%); pointer-events: none; }
+
+    section { padding: 110px 0; }
+    .section-kicker { margin: 0 0 14px; color: #717587; text-transform: uppercase; letter-spacing: .15em; font-size: .74rem; font-weight: 800; }
+    h2 { margin: 0; font-size: clamp(2.7rem, 4.8vw, 4.6rem); line-height: 1.06; letter-spacing: -.04em; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 38px; margin-bottom: 52px; }
+    .section-head.simple { margin-bottom: 28px; }
+    .section-note { max-width: 390px; margin: 0; color: var(--muted); }
+
+    .pi-card { display: grid; grid-template-columns: 310px minmax(0, 1fr); background: var(--paper); align-items: start; }
+    .pi-photo { height: 430px; position: relative; overflow: hidden; background: #dfe1e8; }
+    .pi-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    .pi-content { padding: 38px 48px 42px; }
+    .role { margin: 0 0 10px; color: var(--violet); text-transform: uppercase; letter-spacing: .13em; font-size: .73rem; font-weight: 800; }
+    .pi-content h3 { margin: 0 0 8px; font-size: clamp(2.5rem, 4vw, 4.1rem); line-height: 1.03; letter-spacing: -.04em; }
+    .degree { margin: 0 0 28px; color: var(--muted); }
+    .profile-link { display: inline-flex; align-items: center; gap: 9px; font-weight: 750; border-bottom: 1px solid var(--ink); }
+    .profile-link::after { content: "↗"; color: var(--violet); }
+    .pi-details { display: grid; grid-template-columns: 1.25fr .75fr; gap: 40px; margin-top: 52px; padding-top: 32px; border-top: 1px solid var(--line); }
+    .detail-title { margin: 0 0 15px; color: #797d8e; text-transform: uppercase; letter-spacing: .12em; font-size: .7rem; font-weight: 800; }
+    .timeline, .course-list { list-style: none; margin: 0; padding: 0; }
+    .timeline li { display: grid; grid-template-columns: 78px 1fr; gap: 13px; margin-bottom: 11px; color: var(--muted); font-size: .87rem; line-height: 1.45; }
+    .timeline time { color: var(--ink); font-weight: 700; }
+    .course-list li { margin-bottom: 10px; color: var(--muted); font-size: .87rem; line-height: 1.45; }
+
+    .members-section { background: #eff0f5; }
+    .members-section > .shell > .pi-card { margin-bottom: 72px; background: white; }
+    .member-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .member-card { min-height: 300px; padding: 30px 29px; display: flex; flex-direction: column; background: white; border-top: 4px solid var(--accent); box-shadow: 0 14px 40px rgb(28 31 52 / 6%); }
+    .member-card:nth-child(3n + 1) { --accent: var(--cyan); }
+    .member-card:nth-child(3n + 2) { --accent: var(--pink); }
+    .member-card:nth-child(3n + 3) { --accent: var(--orange); }
+    .initials { width: 54px; height: 54px; display: grid; place-items: center; border-radius: 50%; color: var(--ink); background: color-mix(in srgb, var(--accent) 28%, white); font-family: Georgia, "Times New Roman", serif; font-size: 1.08rem; }
+    .member-card h3 { margin: 34px 0 5px; font-size: 1.65rem; line-height: 1.16; letter-spacing: -.02em; }
+    .member-role { margin: 0; color: var(--muted); font-size: .88rem; }
+    .research-theme { margin: auto 0 0; padding-top: 28px; border-top: 1px solid var(--line); color: var(--ink); font-size: .92rem; line-height: 1.48; }
+    .research-theme span { display: block; margin-bottom: 5px; color: #7b7f90; text-transform: uppercase; letter-spacing: .1em; font-size: .67rem; font-weight: 800; }
+
+    .team-secondary { margin-top: 76px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 70px; }
+    .team-block h3 { margin: 0 0 22px; font-size: 2rem; letter-spacing: -.025em; }
+    .name-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid #d6d8e1; }
+    .name-list li { padding: 17px 0; display: flex; justify-content: space-between; gap: 20px; border-bottom: 1px solid #d6d8e1; }
+    .name-list span { color: var(--muted); font-size: .84rem; }
+
+    .affiliate-block { margin-top: 76px; }
+    .affiliate-block > h3 { margin: 0 0 22px; font-size: 2rem; letter-spacing: -.025em; }
+    .affiliate-card { display: grid; grid-template-columns: 110px 1fr auto; gap: 30px; align-items: center; padding: 34px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .affiliate-card .initials { width: 70px; height: 70px; background: color-mix(in srgb, var(--violet) 25%, white); }
+    .affiliate-card h3 { margin: 0 0 4px; font-size: 1.75rem; }
+    .affiliate-meta { margin: 0; color: var(--muted); font-size: .9rem; }
+    .affiliate-theme { max-width: 340px; text-align: right; color: var(--muted); font-size: .92rem; }
+
+    .alumni-section { background: var(--night); color: white; }
+    .alumni-section .section-kicker { color: var(--cyan); }
+    .alumni-section .section-note { color: rgb(255 255 255 / 58%); }
+    .alumni-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 54px 44px; margin-top: 58px; }
+    .alumni-group h3 { margin: 0 0 16px; padding-bottom: 13px; border-bottom: 1px solid rgb(255 255 255 / 18%); color: white; font-family: inherit; font-size: .78rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .alumni-group ul { list-style: none; margin: 0; padding: 0; }
+    .alumni-group li { margin: 0 0 9px; color: rgb(255 255 255 / 65%); }
+    footer { padding: 48px 0; background: #05060c; color: rgb(255 255 255 / 62%); }
+    .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+    .footer-title { color: white; font-weight: 750; margin-bottom: 8px; }
+    .footer-contact { text-align: right; }
+    .social-links { display: flex; justify-content: flex-end; gap: 18px; margin-top: 14px; }
+    .social-links a { color: white; font-size: .82rem; font-weight: 700; letter-spacing: .04em; }
+    .social-links a:hover, .social-links a:focus-visible { color: var(--cyan); }
+
+    @media (max-width: 900px) {
+      .nav { min-height: 72px; }
+      .nav-toggle { display: block; }
+      .nav-links { display: none; position: absolute; z-index: 20; top: 72px; left: 20px; right: 20px; padding: 24px; background: rgb(9 11 20 / 98%); border: 1px solid rgb(255 255 255 / 15%); flex-direction: column; align-items: flex-start; gap: 18px; }
+      .nav-links.open { display: flex; }
+      .hero-image { inset: 0; width: 100%; opacity: .5; }
+      .pi-card { grid-template-columns: 260px minmax(0, 1fr); }
+      .pi-photo { height: 370px; }
+      .pi-content { padding: 34px 36px 38px; }
+      .pi-details { grid-template-columns: 1fr; }
+      .member-grid { grid-template-columns: repeat(2, 1fr); }
+      .affiliate-card { grid-template-columns: 90px 1fr; }
+      .affiliate-theme { grid-column: 2; max-width: none; text-align: left; }
+      .alumni-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 620px) {
+      .shell { width: min(calc(100% - 28px), var(--max)); }
+      .people-hero { min-height: 320px; }
+      .people-hero::after { background: linear-gradient(90deg, rgb(9 11 20 / 96%), rgb(9 11 20 / 52%)); }
+      .hero-copy { padding: 64px 0; }
+      .group-photo-section { padding: 54px 0; }
+      section { padding: 78px 0; }
+      .section-head { align-items: start; flex-direction: column; gap: 20px; }
+      .pi-card { grid-template-columns: 1fr; }
+      .pi-photo { width: min(100%, 330px); height: 420px; }
+      .pi-content { padding: 38px 25px; }
+      .pi-details, .member-grid, .team-secondary, .alumni-grid { grid-template-columns: 1fr; }
+      .team-secondary { gap: 48px; }
+      .member-card { min-height: 275px; }
+      .affiliate-card { grid-template-columns: 1fr; }
+      .affiliate-theme { grid-column: auto; }
+      .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+      .footer-contact { text-align: left; }
+      .social-links { justify-content: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Primary navigation">
+      <a class="brand" href="../" aria-label="Tamori Lab home"><span class="brand-mark" aria-hidden="true"></span><span>Tamori Lab</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../research/">Research</a></li>
+        <li><a class="active" href="../people/">People</a></li>
+        <li><a href="../publications/">Publications</a></li>
+        <li><a href="../news/">News</a></li>
+        <li><a href="../contact/">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="people-hero">
+      <img class="hero-image" src="../assets/kamocafe-people.webp" alt="Colored glass windows at Kamo River Cafe in Kyoto">
+      <div class="shell hero-copy"><h1>People</h1></div>
+    </section>
+
+    <section class="group-photo-section">
+      <div class="shell group-photo"><img src="https://images.squarespace-cdn.com/content/v1/55dd6e1de4b0f656b821f574/970b785e-0d32-40f9-b6ff-4b2c0310bca1/Tamori%2Blab%2B090126.jpeg" alt="Members of the Tamori Lab at the University of Louisiana at Lafayette"></div>
+    </section>
+
+    <section class="members-section">
+      <div class="shell">
+        <div class="section-head simple"><h2>Current Lab Members</h2></div>
+        <article class="pi-card">
+          <div class="pi-photo"><img src="https://images.squarespace-cdn.com/content/v1/55dd6e1de4b0f656b821f574/ff31b1a2-67fb-4986-a528-9d2ca61eeb00/Y.Tamori_080826.JPG" alt="Yoichiro Tamori"></div>
+          <div class="pi-content">
+            <p class="role">Principal Investigator · Assistant Professor</p>
+            <h3>Yoichiro Tamori</h3>
+            <p class="degree">Ph.D.</p>
+            <a class="profile-link" href="https://biology.louisiana.edu/node/320" target="_blank" rel="noreferrer">University profile</a>
+            <div class="pi-details">
+              <div>
+                <p class="detail-title">Academic path</p>
+                <ul class="timeline">
+                  <li><time>2025–</time><span>Assistant Professor, University of Louisiana at Lafayette</span></li>
+                  <li><time>2020–24</time><span>Associate Professor, Kyoto University</span></li>
+                  <li><time>2018–20</time><span>Lecturer, Hokkaido University</span></li>
+                  <li><time>2014–18</time><span>Assistant Professor, National Institute of Genetics</span></li>
+                  <li><time>2005–14</time><span>Postdoctoral research, Dartmouth College and Florida State University</span></li>
+                  <li><time>2005</time><span>Ph.D., Hokkaido University</span></li>
+                </ul>
+              </div>
+              <div>
+                <p class="detail-title">Teaching at UL Lafayette</p>
+                <ul class="course-list"><li>BIOL 434 · Histology</li><li>BIOL 457 · Advanced Cell Biology</li><li>BIOL 458 · Advanced Cell Biology Lab</li><li>BIOL 595 · Genetic Model Systems for Biomedical Research</li></ul>
+              </div>
+            </div>
+          </div>
+        </article>
+        <div class="member-grid">
+          <article class="member-card"><div class="initials" aria-hidden="true">JP</div><h3>Josna Mary Pious</h3><p class="member-role">Ph.D. Student</p><p class="research-theme"><span>Research theme</span>Cellular cooperation in tumor invasion</p></article>
+          <article class="member-card"><div class="initials" aria-hidden="true">JM</div><h3>Jafar Malahmeh</h3><p class="member-role">Master’s Student</p><p class="research-theme"><span>Research theme</span>Tumor-associated tracheogenesis</p></article>
+          <article class="member-card"><div class="initials" aria-hidden="true">KC</div><h3>Kyle Cormiere</h3><p class="member-role">Master’s Student</p><p class="research-theme"><span>Research theme</span>Stress resilience of polyploid cells</p></article>
+        </div>
+        <div class="team-secondary">
+          <div class="team-block"><h3>Lab Technician</h3><ul class="name-list"><li><strong>Tasnima Hossain Supty</strong></li></ul></div>
+          <div class="team-block"><h3>Undergraduate Students</h3><ul class="name-list"><li><strong>Grace Johanson</strong></li><li><strong>Bailey Collier</strong></li></ul></div>
+        </div>
+        <div class="affiliate-block">
+          <h3>Affiliated Researcher</h3>
+          <article class="affiliate-card"><div class="initials" aria-hidden="true">SD</div><div><h3>Sheng “Roy” Deng</h3><p class="affiliate-meta">Ph.D. Student · Kyoto University</p></div><div class="affiliate-theme">Intratumor heterogeneity in tumor invasion</div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="alumni-section">
+      <div class="shell">
+        <div class="section-head"><div><p class="section-kicker">Alumni</p><h2>Part of our story</h2></div><p class="section-note">Former members from the Tamori Lab in Japan and Louisiana.</p></div>
+        <div class="alumni-grid">
+          <div class="alumni-group"><h3>Ph.D. Students</h3><ul><li>Rei Kobayashi</li></ul></div>
+          <div class="alumni-group"><h3>Master’s Students</h3><ul><li>Jannatul Mawah</li><li>Jyunki Ikeguchi</li><li>Shingo Nara</li><li>Kenta Morimoto</li></ul></div>
+          <div class="alumni-group"><h3>Undergraduate Students</h3><ul><li>Logan Beebe</li><li>Caleb Hebert</li><li>Masanari Otobe</li><li>Sawako Hayami</li><li>Hiroaki Takishima</li><li>Misaki Okawa</li></ul></div>
+          <div class="alumni-group"><h3>Research Students</h3><ul><li>Yuqing Wang</li></ul></div>
+          <div class="alumni-group"><h3>Lab Technicians</h3><ul><li>Ryunosuke Furukawa</li><li>Hina Nakamura</li><li>Asuka Ishii</li></ul></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="shell footer-grid"><div><div class="footer-title">Tamori Lab</div><div>School of Biological Sciences<br>University of Louisiana at Lafayette</div></div><div class="footer-contact"><div>411 E. St. Mary Blvd · Wharton Hall, VLW 528</div><a href="mailto:yoichiro.tamori@louisiana.edu">yoichiro.tamori@louisiana.edu</a><div class="social-links"><a href="https://www.instagram.com/tamoflylab/" target="_blank" rel="noreferrer">Instagram ↗</a><a href="https://x.com/YoichiroTamori" target="_blank" rel="noreferrer">X ↗</a></div></div></div></footer>
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+  </script>
+</body>
+</html>
