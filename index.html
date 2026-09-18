@@ -170,10 +170,6 @@
       font-weight: 400;
       letter-spacing: -.035em;
     }
-    .intro { background: var(--white); }
-    .intro-inner { max-width: 900px; }
-    .intro-copy { margin: 0; color: var(--muted); font-size: clamp(1.15rem, 2vw, 1.42rem); line-height: 1.75; }
-    .intro-copy p { margin: 0 0 1.15em; }
     .text-link { display: inline-flex; align-items: center; gap: 10px; margin-top: 10px; font-weight: 750; color: var(--ink); }
     .text-link::after { content: "→"; transition: transform .2s ease; }
     .text-link:hover::after { transform: translateX(5px); }
@@ -320,22 +316,12 @@
       </div>
     </section>
 
-    <section class="intro">
-      <div class="shell intro-inner">
-        <p class="section-kicker">Our perspective</p>
-        <div class="intro-copy">
-          <p>Cells are shaped by both their genomes and the tissues they inhabit. The Tamori Lab studies how cells respond when genomes are amplified, tissue architecture is challenged, or local environments change. By combining genetic models with high-resolution imaging, we connect chromosome-scale organization to cell behavior and tissue-level outcomes.</p>
-          <a class="text-link" href="./research/">Explore our research</a>
-        </div>
-      </div>
-    </section>
-
     <section class="themes" id="research">
       <div class="shell">
         <div class="section-head">
           <div>
             <p class="section-kicker">Research themes</p>
-            <h2>From amplified genomes to tissue behavior.</h2>
+            <h2>From heterogeneity to cooperation.</h2>
           </div>
           <p class="section-note">Three connected questions guide our work across cell and tissue scales.</p>
         </div>
@@ -372,6 +358,11 @@
           <a class="text-link" href="./news/">View all news</a>
         </div>
         <div class="news-row">
+          <a class="news-item" href="./news/#website-2026">
+            <div class="news-date">2026 · Lab update</div>
+            <div class="news-title">Welcome to our new website</div>
+            <div class="news-arrow" aria-hidden="true">→</div>
+          </a>
           <a class="news-item" href="./news/#jcb-2026">
             <div class="news-date">2026 · Publication</div>
             <div class="news-title">New publication in Journal of Cell Biology</div>
