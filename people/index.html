@@ -78,6 +78,12 @@
     .members-section > .shell > .pi-card { margin-bottom: 72px; background: white; }
     .member-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
     .member-card { min-height: 300px; padding: 30px 29px; display: flex; flex-direction: column; background: white; border-top: 4px solid var(--accent); box-shadow: 0 14px 40px rgb(28 31 52 / 6%); }
+    .member-card--profile { grid-column: 1 / -1; min-height: 0; padding: 0; display: grid; grid-template-columns: minmax(250px, 320px) minmax(0, 1fr); }
+    .member-photo { min-height: 390px; overflow: hidden; background: #dfe1e8; }
+    .member-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 42%; }
+    .member-profile { padding: 34px 40px 36px; display: flex; flex-direction: column; }
+    .member-card--profile h3 { margin: 0 0 6px; font-size: clamp(2rem, 3.6vw, 3.25rem); }
+    .member-bio { max-width: 760px; margin: 25px 0 28px; color: var(--muted); font-size: .98rem; line-height: 1.72; }
     .member-card:nth-child(3n + 1) { --accent: var(--cyan); }
     .member-card:nth-child(3n + 2) { --accent: var(--pink); }
     .member-card:nth-child(3n + 3) { --accent: var(--orange); }
@@ -127,6 +133,8 @@
       .pi-content { padding: 34px 36px 38px; }
       .pi-details { grid-template-columns: 1fr; }
       .member-grid { grid-template-columns: repeat(2, 1fr); }
+      .member-card--profile { grid-template-columns: 240px minmax(0, 1fr); }
+      .member-profile { padding: 30px 32px 34px; }
       .affiliate-card { grid-template-columns: 90px 1fr; }
       .affiliate-theme { grid-column: 2; max-width: none; text-align: left; }
       .alumni-grid { grid-template-columns: repeat(2, 1fr); }
@@ -145,6 +153,9 @@
       .pi-details, .member-grid, .team-secondary, .alumni-grid { grid-template-columns: 1fr; }
       .team-secondary { gap: 48px; }
       .member-card { min-height: 275px; }
+      .member-card--profile { grid-template-columns: 1fr; }
+      .member-photo { min-height: 0; height: 430px; }
+      .member-profile { padding: 30px 25px 34px; }
       .affiliate-card { grid-template-columns: 1fr; }
       .affiliate-theme { grid-column: auto; }
       .footer-grid { grid-template-columns: 1fr; gap: 24px; }
@@ -208,7 +219,15 @@
           </div>
         </article>
         <div class="member-grid">
-          <article class="member-card"><div class="initials" aria-hidden="true">JP</div><h3>Josna Mary Pious</h3><p class="member-role">Ph.D. Student</p><p class="research-theme"><span>Research theme</span>Cellular cooperation in tumor invasion</p></article>
+          <article class="member-card member-card--profile">
+            <div class="member-photo"><img src="../assets/josna-mary-pious-2026.webp" alt="Josna Mary Pious working in the Tamori Lab"></div>
+            <div class="member-profile">
+              <h3>Josna Mary Pious</h3>
+              <p class="member-role">Ph.D. Student</p>
+              <p class="member-bio">I am a graduate student in Environmental and Evolutionary Biology at the University of Louisiana at Lafayette, working in the Tamori Lab. My interest in biology began with how organisms interact, adapt, and coexist. I now explore similar questions at the cellular level: how do tumor cells adapt to their surroundings, interact with neighboring cells, and coordinate their behavior during invasion? Using the fruit fly wing imaginal disc—a larval tissue that develops into the adult wing and nearby body structures—I study how differences among tumor cells and changes in their metabolism may help invasive tumors form and persist.</p>
+              <p class="research-theme"><span>Research theme</span>Cellular cooperation in tumor invasion</p>
+            </div>
+          </article>
           <article class="member-card"><div class="initials" aria-hidden="true">JM</div><h3>Jafar Malahmeh</h3><p class="member-role">Master’s Student</p><p class="research-theme"><span>Research theme</span>Tumor-associated tracheogenesis</p></article>
           <article class="member-card"><div class="initials" aria-hidden="true">KC</div><h3>Kyle Cormiere</h3><p class="member-role">Master’s Student</p><p class="research-theme"><span>Research theme</span>Stress resilience of polyploid cells</p></article>
           <article class="member-card"><div class="initials" aria-hidden="true">TH</div><h3>Tasnima Hossain Supty</h3><p class="member-role">Lab Technician</p><p class="research-theme"><span>Research theme</span></p></article>
